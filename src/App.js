@@ -1,21 +1,20 @@
-import './App.css';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import HomePage from './pages/homepage/homepage.component';
+import React from 'react';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
-const HatsPage = (props) => (
-  <div>
-    <h1>HATS PAGE: { props.match.params.hatsId }</h1>
-    <h1>HATS COLOR: { props.match.params.color }</h1>
-  </div>
-);
+import './App.css';
+
+import HomePage from './pages/homepage/homepage.component';
+import ShopPage from './pages/shop/shop.component.jsx';
+import Header from './components/header/header.component.jsx';
 
 function App() {
   return (
     <BrowserRouter>
       <div>
+        <Header />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/hats' component={HatsPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
         </Switch>
       </div>
     </BrowserRouter>
