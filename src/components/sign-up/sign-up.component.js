@@ -8,8 +8,6 @@ export class Signup extends Component {
   constructor() {
     super();
 
-    console.log('I visited here');
-
     this.state = {
       displayName: '',
       email: '',
@@ -62,7 +60,7 @@ export class Signup extends Component {
             name='displayName'
             label='Name'
             handleChange={this.handleChange}
-            value={this.state.displayName}
+            value={displayName}
             required 
             />
           <FormInput
